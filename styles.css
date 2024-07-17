@@ -16,6 +16,81 @@
     --fs-100: 0.65rem;
 
     /* font families */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
 }
 
+
+
+/* reset browser styles*/
+
+/* box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+/* remove default margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+figure,
+picture {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* setting up the body,
+1.4 browser default for line height is too small,
+100vh min height makes shorter pages w no scroll easier to work with */
+
+
+body {
+    color: hsl( var(--clr-white) );
+    background-color: hsl( var(--clr-dark) );
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* width makes pictures scale with the browser/container they're in */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* form elements do not inherit fonts by default */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who have turned them off - important for accesibility */
+/* Tone down the animation to avoid vestibular motion triggers! */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
 
